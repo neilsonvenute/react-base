@@ -1,9 +1,11 @@
+import Header from './components/Header';
 import Login from './pages/login';
 import GlobalStyle from './styles/GlobalStyles';
 
 function App() {
   return (
     <>
+      <Header />
       <Login />
       <GlobalStyle />
     </>
