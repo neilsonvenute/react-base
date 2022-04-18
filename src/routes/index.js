@@ -1,13 +1,18 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Routes } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Login from '../pages/login';
 import Page404 from '../pages/Page404';
+import MyRoute from './MyRoutes';
 
 export default function Routers() {
+  toast.success('Oie sucesso!');
   return (
-    <Routes>
-      <Route exact path="/" element={<Login />} />
-      <Route path="*" element={<Page404 />} />
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <MyRoute exact path="/" element={<Login />} isClosed />
+        <MyRoute path="*" element={<Page404 />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
